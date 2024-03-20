@@ -1,0 +1,148 @@
+/*esto es un comentario en css
+
+es un comentario multilinea, me permite comentar mucho codigo a la vez
+
+*/
+/*sintaxis basica
+
+selector{
+    propiedad:valor;
+    propiedad: valor;
+    propiedad: valor;
+    n propiedades valores...
+
+}
+
+*/
+/*ESTE ES UN SELECTOR DE ETIQUETA
+LE ESTAMOS CAMBIANDO EL COLOR A LA FUENTE DEL TITULO H1
+*/
+/*
+h1{
+    color:#e2e2e2;
+    background-color:#2e1405;
+}
+.colorGris{
+    color:rgb(80, 80, 80);
+}
+.fuente30px{
+    font-size: 30px;
+}
+#idEjemplo{
+    color:green;
+}*/
+
+/*hay tres selectores basicos 
+
+selector de etiqueta --- menos especifico de los tres 
+selector de clase --- mas especifico que el selector de etiqueta
+selector de id-- mas especifico que el selector de clase
+
+nombre de la etiqueta
+.clase - .nombreDeLaClass
+#id - #nombreDelId
+* - * (selecciona todos los elementos)
+
+ejemplo de id :
+
+#parrafoUno{
+    color:rgb(80, 80, 80);
+}
+#parrafoDos{
+    color:rgb(80, 80, 80);
+}
+
+concepto de cascada, 
+Si tengo dos selectores que afectan al mismo elemento, el que se aplica es el que tiene mas especificidad, y si tienen la misma especificidad, el que se aplica es el que esta mas abajo en el codigo
+MAS ESPECIFICO, MAS PRIORIDAD
+.colorVioleta{
+    color:rgb(117, 13, 236);
+}
+
+#colorNaranja{
+    color:rgb(255, 165, 0);
+}
+
+h1{
+    color:red;
+}
+h1{
+    color: blue;
+}
+
+.colorBlue{
+    color:blue;
+   
+}
+
+.fuente50px{
+    font-size: 50px;
+}
+
+.colorViolet{
+    color:rgb(236, 13, 13);
+}
+*/
+
+/*estoy siendo más especifico y estoy llamando al elemento a traves de su padre*/
+.sectionPrincipal .parrafo{
+
+    color:violet;
+}
+
+.parrafo{
+    color:blue;
+}
+
+/*es llamar a un elemento por su padre o abuelo*/
+/*.listaNav .linkNav{
+    text-decoration:none;
+    color:white;
+}*/
+/*
+.colorVerde{
+    color:green;
+}
+
+.colorRosa{
+    color:pink;
+}*/
+
+/*anidacion nesting*/
+
+.listaNav{
+    background-color:gray;
+    .listaItem{
+        .colorAmarillo{
+            color:yellow;
+        }
+    }   
+}
+.colorAmarillo{
+    color:yellow;
+}
+
+.contenedorPadre{
+    display:flex;
+    justify-content: space-evenly;
+    .hijo{
+        width:100px;
+        height:100px;
+        background-color:blue;
+        
+        .link{
+            color:blue;
+            text-decoration:none;
+        }
+    }
+    .hijoDos{
+        width:100px;
+        height:100px;
+        background-color:red;
+    }
+
+}
+
+
+
+

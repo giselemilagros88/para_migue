@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #141414;
+    color: #fff;
+}
+header{
+    text-align: center;
+    padding: 20px;
+}
+footer{
+    text-align: center;
+    margin-top:10px;
+    
+}
+
+.galeria{
+    width: 90%;
+    margin:0 auto;
+    height: 85vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:0.5px solid gray;
+}
+/*
+flex-grow:
+La propiedad flex-grow es una de las propiedades clave del modelo de caja flexible (flexbox) en CSS. Se utiliza para establecer la capacidad de un elemento flexible para crecer y ocupar espacio adicional dentro de su contenedor flexible.
+
+La propiedad flex-grow toma un valor numérico, que representa la proporción de espacio disponible que se debe asignar al elemento. Por ejemplo, si hay dos elementos flexibles dentro de un contenedor, uno con un valor de flex-grow: 1 y otro con un valor de flex-grow: 2, el segundo elemento ocupará el doble de espacio que el primer elemento.
+
+Si todos los elementos tienen el mismo valor de flex-grow, entonces se distribuirán equitativamente todo el espacio disponible. Si un elemento tiene un valor de flex-grow: 0, no crecerá en absoluto, incluso si hay espacio disponible.
+
+En resumen, flex-grow se utiliza para controlar la capacidad de un elemento flexible para crecer dentro de su contenedor, y puede ser muy útil para establecer diseños de caja flexible que se ajusten automáticamente a diferentes tamaños de pantalla y resoluciones
+
+El valor por defecto de la propiedad flex-grow es 0. Esto significa que, por defecto, los elementos flexibles no crecerán dentro de su contenedor flexible, incluso si hay espacio disponible
+
+existen otras propiedades de flexbox que pueden utilizarse para establecer el comportamiento de los elementos flexibles, como flex-shrink y flex-basis. Al utilizar estas propiedades juntas, puedes crear diseños de caja flexible muy precisos y personalizados.
+
+La propiedad flex-shrink se utiliza para establecer la capacidad de un elemento flexible para reducir su tamaño si es necesario para adaptarse a su contenedor. El valor predeterminado es 1, lo que significa que los elementos flexibles se reducirán automáticamente si el espacio disponible es insuficiente para contener todos los elementos. Si deseas que un elemento no se reduzca en absoluto, incluso si hay espacio insuficiente disponible, puedes establecer flex-shrink: 0 para ese elemento.
+
+Por otro lado, la propiedad flex-basis se utiliza para establecer el tamaño inicial de un elemento flexible antes de que se distribuya el espacio disponible. El valor predeterminado es auto, que hace que el tamaño del elemento se ajuste automáticamente a su contenido. Sin embargo, puedes establecer un valor específico en píxeles, porcentaje u otra unidad de medida para definir el tamaño inicial del elemento
+
+Junto con flex-grow, estas tres propiedades (flex-grow, flex-shrink y flex-basis) se utilizan para controlar el comportamiento de los elementos flexibles en un contenedor flexible. La sintaxis para establecer estas tres propiedades juntas en un solo valor es flex: <flex-grow> <flex-shrink> <flex-basis>;. Por ejemplo, flex: 1 0 50%; establece que el elemento debe crecer en función del espacio disponible (flex-grow: 1), no reducir su tamaño si no hay suficiente espacio (flex-shrink: 0), y tener un tamaño inicial del 50% del ancho del contenedor (flex-basis: 50%;)*/
+
+
+
+.galeria img{
+    width: 0px;
+    height:100%;
+    flex-grow: 1;/*que dentro de la caja flexible ocupe todo el espacio que pueda*/
+    object-fit: cover;
+    opacity: 0.8;
+    transition: .5s ease;
+}
+
+/*
+.galeria .america{
+    flex-grow: 2;
+}*/
+
+.galeria img:hover{
+    width: 30%;
+    opacity: 1;
+    filter:contrast(120%);
+    
+}
+
+@media screen and (max-width: 768px){
+    .galeria{
+        flex-wrap: wrap;
+    }
+    .galeria .wanda{
+        flex-grow:4;
+    }
+    .galeria img{
+        height: 80%;
+    }
+    .galeria img:hover{
+        width: 70%;
+        
+    }
+}
+

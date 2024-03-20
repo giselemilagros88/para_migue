@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,900&display=swap');
+
+/*reseteo basico de valores*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.grilla{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header header"
+                          "main aside"
+                          "footer footer";
+
+}
+.header{
+    grid-area: header;
+    position:sticky;/*pegajoso, pegarse al scroll*/
+    top:0; /*posicion en la que se queda fijado*/
+    background-color:rgba(0, 0, 0, 0.842);
+    color:white;
+    display: flex;
+    align-items: center;
+    /*justify-content:space-around;*/
+
+    .padreLogo{
+       width: 28%;
+       margin-left:30px;
+    }
+    .logo{
+        width:100px;
+    }
+    .navegacion{
+        width:68% ;
+        .listaNav{
+            
+            list-style: none;
+            display: flex;
+           
+            .listaItem{
+              /*  display:inline-block;*/
+                margin-right: 20px;
+                .linkNav{
+                    color:white;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                
+                }
+            }
+           
+        }
+    }
+   
+}
+.aside{
+    background-color: rgb(220, 155, 131);
+    grid-area: aside;
+}
+.mainIndex{
+    grid-area: main;
+  /*  height: 600px;*/
+    .seccionTitulo{
+        padding-left:100px;
+        padding-top:100px;
+        color:white;
+        line-height: 1.5;
+        background-image: url("../assets/img/header.jpg");
+        background-size: cover;/*ocupa todo el españo disponible*/
+        background-position: center;/*centra la imagen*/
+        background-attachment: fixed;/*la imagen no se mueve al hacer scroll*/
+        width: 100%;/*en el ancho puedo usar siempre % porque los padres tienen por defecto que ocupan siempre el 100% de su contenedor padre*/
+      
+        height: 100vh;/*1vh es igual a el 1% del alto del navegador*/
+        .tituloPrincipal{
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            .grosorFuenteLight{
+                font-weight: 300;
+            
+            }
+        }
+        .linkEncontranosIndex{
+            box-sizing: content-box;/*el ancho y el alto se calculan desde el borde exterior de la caja y con el padding*/
+            display: inline;/*valor por defecto*/
+            display: inline-block;/*permite que el elemento tenga dimensiones, y que siga siendo un elemento en linea, los elementos en linea, solo ocupan de ancho y de alto por defecto lo que tienen como contenido, el proximo elemento en linea se pone al lado*/
+            background-color: rgba(255, 255, 255, 0);
+            width:120px;
+            color:white;
+            text-decoration: none;
+            border:1px solid white;
+            text-align: center;
+            padding:10px;
+            margin-top:30px;
+            
+        }
+    }
+    .seccionTarjetas{
+        width:90%;
+        margin:0 auto;/*centra el elemento*/
+        text-align: center;
+       
+        .tituloSeccionTarjetas{
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 20px;
+        }
+        .contenedorTarjetas{
+            display: flex;
+            justify-content: space-evenly;
+            column-gap: 20px;/*espacio entre columnas*/
+            .tarjeta{
+                /* display: inline-block;*/
+                 width: 300px;
+                 height: 300px;
+                 background-color:rgb(236, 236, 236);
+                 padding:50px 20px;/*tyb lyr*/
+                 padding: 10px 20px 30px 40px;/*top right bottom left*/
+                 padding-top:50px;
+                 padding-bottom: 20px;
+                 padding-left: 15px;
+                 padding-right:20px;
+                 margin-top:20px;
+                 margin-bottom: 20px;
+                 .imgTarjeta{
+                     width: 100%;
+                     height:90%;
+                     object-fit: contain;/*se respeta la dimension de la imagen pero respetando el tamaño del contenedor*/
+                     object-fit: cover;/*se estira para ocupar todo el espacio disponible sin deformarse*/
+                 }
+             }
+        }
+       
+    }
+    .aprendeYconoce{
+        width: 90%;
+        margin:30px auto;
+       
+        display: flex;
+        justify-content: center;
+        gap:50px;
+        .tarjeta{
+            background-color:gray;
+            color:white;
+            width:650px;
+            height:400px;
+            padding:20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            row-gap: 20px;
+        }
+        .aprende{
+            background-image: url("../assets/img/bannerpromo_cafe_02_v2.jpg");
+        }
+        .conoce{
+            background-image: url("../assets/img/bannerpromo_plato_02_v2.jpg");
+        }
+       
+    }
+    .grillaElegir{
+        width: 90%;
+        margin:0 auto;
+       
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: ".     titulo ."
+                              "uno  img    cuatro" 
+                              "dos  img    cinco" 
+                              "tres img     seis";
+        gap:20px;
+        div{
+           color:gray;
+           h4{
+                margin-bottom: 10px;
+                color:rgb(130, 95, 48);
+                font-size: 1.5rem;
+           }
+           
+        }
+        .derecha{
+            text-align: right;
+        }
+        .izquierda{
+            text-align: left;
+        }
+        .titulo{
+            grid-area: titulo;
+            text-align: center;
+            font-size: 2rem;
+            padding: 20px;
+        }
+        .uno{
+            grid-area: uno;
+           
+            padding:20px;
+        }
+        .dos{
+            grid-area: dos;
+           
+            padding:20px;
+        }    
+        .tres{
+            grid-area: tres;
+           
+            padding:20px;
+        }   
+        .cuatro{
+            grid-area: cuatro;
+          
+            padding:20px;
+        }   
+        .cinco{
+            grid-area: cinco;
+            
+            padding:20px;
+        } 
+        .seis{
+            grid-area: seis;
+           
+            padding:20px;
+        
+        }
+        .img{
+            grid-area: img;
+            .hijaImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+          
+        }
+    }
+    /*SECCION DE INGRESAR Y TIENDAS*/
+    .tienda{
+        padding:50px;
+        width: 90%;
+        margin:0 auto;
+        text-align: center;
+        .btnCafe{
+            margin-top:20px;
+            display: inline-block;
+            box-sizing: content-box;
+            padding:1rem;
+            width:120px;
+            height: 35px;
+            border: 1px solid black;
+            background-image: url("../assets/img/coffee-6632524_640.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+            color:white;
+            font-size:1.5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+}
+.footer{
+    grid-area: footer;
+    background-color: rgba(128, 128, 128, 0.477);
+   /* z-index: -100;
+    position:relative;*/
+     .logoFooter{
+        width: 100px;
+        /*  z-index:10;*/
+      }
+      .fa-instagram{
+          color: #8a3ab9;
+          font-size:5rem;
+          position:fixed;/*siempre esta fijo dentro del navegador*/
+          bottom:10px;
+          right: 10px;
+      }
+}
+
+
+@media screen and (max-width: 768px){
+    .grilla{
+      
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header"
+                             "aside"
+                              "main"
+                              "footer";
+    
+    }
+    /*estilos del header*/
+    .header{
+       width: 100%;
+        flex-direction: column;
+        .padreLogo{
+           width:initial;
+           margin-left:initial;/*reinicia los valores y me pone los valores  por defecto de css*/
+        }
+        .logo{
+            width:100px;
+        }
+        .navegacion{
+            width:initial;
+            background-color:pink;
+            .listaNav{
+                .listaItem{
+                  /*  display:inline-block;*/
+                    margin-right: 20px;
+                    .linkNav{
+                       font-size: 1rem;
+                    }
+                }
+               
+            }
+        }
+       
+    }
+    /*estilos del main del index*/
+    .mainIndex{
+        .seccionTitulo{
+           padding-top: 20px;
+           padding-left:10px;
+           height: 50vh;
+        }
+        .seccionTarjetas{
+          
+            .tituloSeccionTarjetas{
+                text-align: center;
+                font-size: 1.8rem;
+            }
+            .contenedorTarjetas{
+                flex-wrap: wrap;
+                justify-content:center;
+               
+                .tarjeta{
+                    /* display: inline-block;*/
+                     width: 400px;
+                     height: 400px;
+                    
+                 }
+            }
+           
+        }
+        .aprendeYconoce{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:50px;
+            .tarjeta{
+                background-color:gray;
+                color:white;
+                width:90%;
+               
+            }
+            .aprende{
+                /*cambiar imagenes por imagenes para celular más chicas*/
+                background-image: url("../assets/img/bannerpromo_cafe_02_v2.jpg");
+            }
+            .conoce{
+                background-image: url("../assets/img/bannerpromo_plato_02_v2.jpg");
+            }
+           
+        }
+        .grillaElegir{
+          
+            grid-template-columns:1fr;
+            grid-template-rows:auto;
+            grid-template-areas: "titulo"
+                                  "uno"   
+                                  "dos"
+                                  "tres"
+                                   "img"
+                                   "cuatro"
+                                   "cinco"
+                                   "seis";
+          
+          
+            .derecha{
+                text-align: left;
+            }
+           
+            .titulo{
+              font-size: 1.5rem;
+            }
+          
+        }/*terminan estilos de gillaElegir*/
+        
+    }/*terminan estilos del main*/
+}/*terminan los estilos de las media queries*/
+

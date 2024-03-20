@@ -1,0 +1,54 @@
+/*mobile first
+body{
+    background-color: blueviolet;
+}
+
+/*tablet
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+   
+    body{
+        background-color: red;
+    }
+}
+/*notebook 
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+   
+    body{
+        background-color: green;
+    }
+}
+/*escritorio
+@media screen and (min-width: 1400px) {
+   
+    body{
+        background-color: yellow;
+    }
+}*/
+
+body{
+    background-color: blueviolet;
+}
+
+/*media querys para celular*/
+@media screen and (max-width: 767px) {
+    body{
+        background-color: red;
+    }
+}
+
+/*media querys para tablet*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body{
+        background-color: green;
+    }
+}
+
+/*notebook */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+   
+    body{
+        background-color: rgb(13, 43, 232);
+    }
+}
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Con video</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        .container{
+            height:100vh;
+            width:100%;
+            position:relative;
+        }
+        .container iframe{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        .container h1{
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:5%;
+            font-size:12rem;
+            background-color:#000;
+            color:#fff;
+            z-index: 10;
+            mix-blend-mode:multiply;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--<iframe src="https://www.youtube.com/embed/9SHnQigQQiA?autoplay=1&mute=1"  width="100" height="100"></iframe>-->
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2jk734u0i8A?autoplay=1&mute=1" frameborder="0"></iframe>
+        <h1>|  Desarrollo Web</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/*@media screen and (min-width: 1025px) { /*de 1024px para arriba */
+      body{
+         margin:0;
+         padding:0;
+         box-sizing: border-box;
+      }
+
+      *{
+         box-sizing: border-box;
+      }
+
+      /* tamaño escritorio */
+      .contenedor{
+            color:white;
+            background-color: rgb(59, 59, 59);
+            height: 100vh;
+            display:grid;
+            grid-template-areas :"nav header header"
+                                 "nav main   aside"
+                                 "nav section aside"
+                                 "nav footer footer";
+      
+            grid-template-columns : minmax(150px,20%) 1fr 20%;
+            grid-template-rows : 10% auto 25% 10%;
+            column-gap: 20px;
+            row-gap : 10px;
+            justify-content:start;
+           /* background-image: url("imagen grande que pesa mucho, que va bien para escritorio");*/
+         
+            
+      }
+      .border {
+         border: 0.5px solid rgb(255, 255, 255);
+      }
+
+      .header {
+            grid-area: header;
+        
+            background-color: rgb(136, 136, 136);
+          
+      }
+      .navegacion {
+         grid-area: nav;
+        
+      }
+      .aside {
+         grid-area: aside;
+       
+      }
+      .footer{
+        
+         grid-area: footer;
+
+      }
+      .main {
+         grid-area : main;
+      }
+      .section {
+         grid-area:section;     
+      }
+
+/*}*/
+
+/*le estamos diciendo al navegador que cuando la pantalla sea como maximo de 768px un celular, 
+como debe comportarse
+estamos cambiando la grilla */
+@media screen and (max-width: 768px) {  /*0 a 768*/
+   .contenedor {
+      grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "section"
+      "aside"
+      "footer" ;
+     
+      grid-template-columns: 1fr ;
+      grid-template-rows: 0.5fr 0.2fr repeat(3,1fr) 0.5fr;
+     /* background-image: url("imagen pequeña perfecta para celular");*/
+    
+   }
+  
+   .contenedor > * {
+         background-color: rgb(105, 57, 236);
+        
+   }
+}
+
+/* 769 a 1024*/
+@media screen and (min-width: 769px) and (max-width:1024px) {
+
+   .contenedor > * {
+      background-color: rgb(236, 57, 236);
+     
+   }
+   .contenedor {
+      grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav section"
+      "nav aside"
+      "nav footer" ;
+     
+      grid-template-columns: 20% 80%;
+      grid-template-rows: 0.5fr 2fr 1fr 1fr 0.5fr;
+    
+   }
+
+}
+  
+ 

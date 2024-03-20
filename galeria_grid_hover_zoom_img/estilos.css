@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedorH1{
+    overflow: hidden;
+}
+h1{
+    text-align: center;
+    margin-top:30px;
+    margin-bottom: 30px;
+    font-size:4rem;
+}
+.galeria{
+    width: 100%;
+    max-width: 1200px;
+   /* background-color: violet;*/
+    margin: 0 auto;
+    display: grid;
+   /* background-color: pink;*/
+   
+    /* auto-fit :Esta palabra clave le dice a la cuadrícula que ajuste automáticamente el número de columnas para que quepan en el contenedor sin desbordarse. En otras palabras, las columnas se ajustarán automáticamente para aprovechar al máximo el espacio disponible.*/
+    /*Esta función minmax establece un rango de tamaños para las columnas. Dentro de este rango, las columnas tienen un tamaño mínimo de 300 píxeles (300px) y un tamaño máximo de 1fr.
+    300px: Esto asegura que cada columna tenga al menos un ancho de 300 píxeles.
+    1fr: Esto significa que las columnas pueden expandirse para llenar cualquier espacio adicional en el contenedor de manera equitativa. La unidad fr (fracción) divide el espacio restante en partes iguales entre las columnas.*/
+    /*El uso de auto-fit en combinación con minmax(300px, 1fr) es especialmente útil cuando se desea crear una cuadrícula de columnas que se adapte de manera flexible al tamaño del contenedor. Las columnas se agrandarán o reducirán automáticamente para caber en el espacio disponible, y ninguna columna será más pequeña que 300 píxeles. Esto es muy útil para crear diseños de cuadrícula responsivos que se ajusten a diferentes tamaños de pantalla sin requerir media queries o ajustes manuales.*/
+    /*diferencia entre auto y auto-fit es que auto-fit permite que las repeticiones se expandan para aprovechar el espacio adicional, mientras que auto simplemente se ajusta al contenido sin expandirse*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   /* grid-template-rows: auto;*/
+    grid-auto-rows: 250px;/*las filas que se hacen automaticamente son todas de 250px*/
+    gap: 20px;
+    /*column-gap:20px;*/
+    padding: 20px;
+}
+
+/* Estilo base para el contenedor */
+.contenedor{
+    box-shadow: 10px 10px 97px -3px rgba(113,0,188,0.47);
+    position:relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   /*esto hace que cuando la imagen se agranda,la imagen no se desborde de su contenedor*/
+   /* background-image:url();*/
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+    filter:grayscale(100%);
+
+}
+
+/* Estilo para el texto de aumento al hover */
+.contenedor .texto {
+    /*truco para centrar un contenido en su contenedor completamente, lo logramos poniendo 
+    relative al padre y el hijo entonces se mueve desde el padre*/
+    position: absolute;
+   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color:rgb(0, 0, 0);
+    font-size:2rem;
+}
+
+/* Aplicar el aumento de imagen y mostrar el texto al hacer hover */
+.contenedor:hover img {
+    transform: scale(1.5); /* Aumentar la escala de la imagen */
+    /*filter: blur(2px);*/
+    /*filter:grayscale(100%);*/
+   /* filter: blur(2px);*/
+    filter:initial;
+}
+
+.contenedor:hover .texto {
+    opacity: 1; /* Mostrar el texto de aumento */
+    color:white;
+}
